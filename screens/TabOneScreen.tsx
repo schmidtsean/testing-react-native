@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { StyleSheet, ScrollView, Image} from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
+import { StyleSheet, ScrollView, Image, TextInput} from 'react-native';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
+
+
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
@@ -12,29 +13,16 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
     
     <Image style= {{width: 100, height: 100 }} source={require('../assets/images/peace.png')} />
-    <TextInput>Enter Text Here</TextInput>
+   
+   <TextInput
+    style={styles.input}
+    placeholder="Enter Text Here"
+    placeholderTextColor= 'black'
+    />
+
+
     </View>
-      <ScrollView style={styles.secondContainer}>
-        <Text>Testing</Text>
-        <Text>Testing</Text>
-        <Text>Testing</Text>
-        <Text>Testing</Text>
-        <Text>Testing</Text>
-        <Text>Testing</Text>
-        <Text>Testing</Text>
-        <Text>Testing</Text>
-        <Text>Testing</Text>
-        <Text>Testing</Text>
-        <Text>Testing</Text>
-        <Text>Testing</Text>
-        <Text>Testing</Text>
-        <Text>Testing</Text>
-        <Text>Testing</Text>
-        <Text>Testing</Text>
-        <Text>Testing</Text>
-        <Text>Testing</Text>
-        <Text>Testing</Text>
-        <Text>Testing</Text>
+      <ScrollView contentContainerStyle={styles.secondContainer}>
         <Text>Testing</Text>
         <Text>Testing</Text>
         <Text>Testing</Text>
@@ -46,27 +34,39 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
         <Text>Testing</Text>
         <Text>Testing</Text>
         
+
+       
+        
       </ScrollView>
       
    </View>
   );
 }
 
+
 const styles = StyleSheet.create({
   body: {
     flex: 1,
-    backgroundColor: 'orange',
+    backgroundColor: 'grey',
     
   },
-
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+    textAlign: 'center',
+    
+  },
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: 'lightblue',
+    backgroundColor: 'grey',
   },
   secondContainer: {
-    flex: 1,
-    marginLeft: 160
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   title: {
     fontSize: 20,
